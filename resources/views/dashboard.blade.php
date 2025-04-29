@@ -3,78 +3,88 @@
 @section('content')
 
 <main>
-    <div class="container-fluid">
-        <h1 class="mt-4">Dashboard</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Dashboard</li>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4 fw-bold text-primary">Dashboard</h1>
+        <ol class="breadcrumb mb-4 bg-light rounded p-2">
+            <li class="breadcrumb-item active text-secondary">Dashboard</li>
         </ol>
-        <div class="row">
+
+        <!-- Cards Section -->
+        <div class="row g-4">
             <div class="col-xl-3 col-md-6">
-                <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">Stock</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="{{ route('all.product') }}">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <div class="card shadow-sm border-0 bg-primary text-white">
+                    <div class="card-body fs-5">📦 Stock</div>
+                    <div class="card-footer d-flex justify-content-between align-items-center bg-transparent border-0">
+                        <a class="text-white small stretched-link" href="{{ route('all.product') }}">View Details</a>
+                        <i class="fas fa-arrow-circle-right"></i>
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-3 col-md-6">
-                <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">Sold Products</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="{{ route('sold.products') }}">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <div class="card shadow-sm border-0 bg-warning text-white">
+                    <div class="card-body fs-5">🛒 Sold Products</div>
+                    <div class="card-footer d-flex justify-content-between align-items-center bg-transparent border-0">
+                        <a class="text-white small stretched-link" href="{{ route('sold.products') }}">View Details</a>
+                        <i class="fas fa-arrow-circle-right"></i>
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-3 col-md-6">
-                <div class="card bg-success text-white mb-4">
-                    <div class="card-body">Available Products</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="{{ route('available.products') }}">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <div class="card shadow-sm border-0 bg-success text-white">
+                    <div class="card-body fs-5">✅ Available Products</div>
+                    <div class="card-footer d-flex justify-content-between align-items-center bg-transparent border-0">
+                        <a class="text-white small stretched-link" href="{{ route('available.products') }}">View Details</a>
+                        <i class="fas fa-arrow-circle-right"></i>
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-3 col-md-6">
-                <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">Pending Orders</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="{{ route('pending.orders') }}">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <div class="card shadow-sm border-0 bg-danger text-white">
+                    <div class="card-body fs-5">⏳ Pending Orders</div>
+                    <div class="card-footer d-flex justify-content-between align-items-center bg-transparent border-0">
+                        <a class="text-white small stretched-link" href="{{ route('pending.orders') }}">View Details</a>
+                        <i class="fas fa-arrow-circle-right"></i>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area mr-1"></i>
-                        Area Chart Example
+
+        <!-- Charts Section -->
+        <div class="row mt-4">
+            <div class="col-xl-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white fw-semibold">
+                        📈 Area Chart
                     </div>
-                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body">
+                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                    </div>
                 </div>
             </div>
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-bar mr-1"></i>
-                        Bar Chart Example
+            <div class="col-xl-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white fw-semibold">
+                        📊 Bar Chart
                     </div>
-                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body">
+                        <canvas id="myBarChart" width="100%" height="40"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-table mr-1"></i>
-                DataTable Example
+
+        <!-- DataTable -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white fw-semibold">
+                🗃️ Data Table
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
+                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="table-light">
                             <tr>
                                 <th>Name</th>
                                 <th>Position</th>
@@ -84,7 +94,7 @@
                                 <th>Salary</th>
                             </tr>
                         </thead>
-                        <tfoot>
+                        <tfoot class="table-light">
                             <tr>
                                 <th>Name</th>
                                 <th>Position</th>
@@ -119,7 +129,6 @@
                                 <td>2009/01/12</td>
                                 <td>$86,000</td>
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
@@ -127,4 +136,5 @@
         </div>
     </div>
 </main>
+
 @endsection
